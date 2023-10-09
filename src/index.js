@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 io.on("connection", socket =>{
     
     socket.on("circle position", position => {
-        io.emit("move circle", position)
+        socket.broadcast.emit("move circle", position)
     });
 
 });
